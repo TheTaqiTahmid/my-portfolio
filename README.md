@@ -10,5 +10,5 @@ docker tag my-portfolio-app:latest registry.tahmidcloud.com/my-portfolio-app:lat
 docker push registry.tahmidcloud.com/my-portfolio-app:latest
 
 # Check the registry
-curl -u user:pass http://192.168.1.142:5000/v2/_catalog
+curl -u user:pass https://registry.tahmidcloud.com/v2/_catalog
 ```
