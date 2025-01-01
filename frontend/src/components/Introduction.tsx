@@ -1,4 +1,3 @@
-import React from "react";
 import { Linkedin, Github, Award } from "lucide-react";
 
 const Introduction = () => {

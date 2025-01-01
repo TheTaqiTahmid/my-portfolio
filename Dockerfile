@@ -3,19 +3,27 @@ FROM node:20 AS build
 
 WORKDIR /app
 
-COPY package.json ./
-COPY package-lock.json ./
+# Copy package.json and package-lock.json to the WORKDIR
+COPY frontend/package.json ./
+COPY frontend/package-lock.json ./
+
+# Install dependencies
 RUN npm install
 
-COPY . ./
+# Copy the rest of the frontend files to the WORKDIR
+COPY frontend/. ./
+
+# Build the React app
 RUN npm run build
 
 # Step 2: Serve the app
 FROM nginx:alpine
 
+# Copy the built files from the build stage to the Nginx web root
 COPY --from=build /app/dist /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
 
+# Run Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]

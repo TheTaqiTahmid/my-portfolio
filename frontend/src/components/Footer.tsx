@@ -18,7 +18,7 @@ const Footer = () => {
             <span>Built with React & Tailwind CSS</span>
             <span>•</span>
             <a 
-              href="https://github.com/TheTaqiTahmid/portfolio" 
+              href="https://github.com/TheTaqiTahmid/my-portfolio.git" 
               target="_blank" 
               rel="noreferrer"
               className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
