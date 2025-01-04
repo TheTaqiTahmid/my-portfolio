@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
+import Home from './pages/Home'
 import Navbar from './components/Navbar'
-import Introduction from './components/Introduction'
-import Skills from './components/Skills'
 import Footer from './components/Footer'
+import Experience from './pages/Experience';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true)
@@ -14,12 +16,16 @@ function App() {
   return (
     <>
     <div className={darkMode ? "dark" : ""}>
-      <main className="bg-white px-10 dark:bg-gray-900">
+      <main className="bg-amber-50 px-10 dark:bg-gray-900">
         <section className="min-h-screen">
           <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
-          <Introduction></Introduction>
-          <Skills></Skills>
-          <Footer></Footer>
+          <Router>
+            <Routes>
+              <Route path='/' element={<Home/>} />
+              <Route path='/experience' element={<Experience/>} />
+            </Routes>
+          </Router>
+          <Footer />
         </section>
       </main>
     </div>
