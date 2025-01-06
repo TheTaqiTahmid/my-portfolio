@@ -1,7 +1,8 @@
 import { Linkedin, Github, Award } from "lucide-react";
+import { COLORS } from "../constants";
 
 const Introduction = () => {
-  const BoldStyle = "text-blue-900 dark:text-blue-400 font-semibold";
+  const BoldStyle = "text-blue-900 dark:text-blue-300 font-semibold";
   
   const socialLinks = [
     {
@@ -23,15 +24,15 @@ const Introduction = () => {
 
   return (
     <div className="text-center p-4 max-w-4xl mx-auto">
-      <h1 className="text-5xl text-blue-900 dark:text-blue-400 py-2 font-medium font-burtons">
+      <h1 className={`text-5xl py-2 ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} font-medium font-mono tracking-wide`}>
         Taqi Tahmid
       </h1>
       
-      <h2 className="text-2xl py-2 font-burtons dark:text-blue-200">
+      <h2 className={`text-2xl py-2 font-burtons ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}`}>
         Test Automation and DevOps Engineer
       </h2>
       
-      <div className="text-md py-5 leading-8 text-gray-800 dark:text-gray-300 md:text-xl space-y-4">
+      <div className={`text-md py-5 ${COLORS.TEXT} ${COLORS.DARK_TEXT} leading-8 md:text-xl space-y-4`}>
         <p>
           I am a <span className={BoldStyle}>DevOps</span> and{" "}
           <span className={BoldStyle}>Test Automation</span> engineer with a{" "}
@@ -56,7 +57,7 @@ const Introduction = () => {
             href={link.href}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-900 dark:text-blue-400 hover:text-sky-600 dark:hover:text-sky-500 transition-colors duration-200"
+            className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}  hover:text-sky-600 dark:hover:text-sky-500 transition-colors duration-200`}
             aria-label={link.label}
           >
             {link.icon}

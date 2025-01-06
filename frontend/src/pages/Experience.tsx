@@ -1,8 +1,7 @@
 import { Building2, Calendar, GraduationCap, MapPin, Microscope, Wrench } from 'lucide-react';
+import { COLORS } from '../constants';
 
 const Experience = () => {
-  const BoldStyle = "text-blue-900 dark:text-blue-400 font-semibold";
-
   const experiences = [
     {
       title: "Experienced Developer (DevOps)",
@@ -66,19 +65,19 @@ const Experience = () => {
 
   return (
     <div className="p-4 max-w-4xl mx-auto">
-      <h2 className="text-3xl text-blue-900 dark:text-blue-400 py-4 font-medium font-burtons text-center">
+      <h2 className={`text-3xl ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} py-4 font-medium font-burtons text-center`}>
         Experience
       </h2>
 
       <div className="space-y-8">
         {experiences.map((exp, index) => (
-          <div key={index} className="border-l-4 border-blue-900 dark:border-blue-400 pl-4 space-y-2">
+          <div key={index} className={`border-l-4 ${COLORS.BORDER} ${COLORS.DARK_BORDER} pl-4 space-y-2`}>
             <div className="flex items-center gap-2">
-              <Building2 className="text-blue-900 dark:text-blue-400" size={24} />
-              <h3 className={`text-xl ${BoldStyle}`}>{exp.title}</h3>
+              <Building2 className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}`} size={24} />
+              <h3 className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} text-xl font-semibold`}>{exp.title}</h3>
             </div>
             
-            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 text-gray-600 dark:text-gray-400">
+            <div className={`flex flex-col md:flex-row md:items-center gap-2 md:gap-6 ${COLORS.TEXT} ${COLORS.DARK_TEXT}`}>
               <div className="flex items-center gap-1">
                 <Building2 size={16} />
                 <span>{exp.company}</span>
@@ -93,16 +92,16 @@ const Experience = () => {
               </div>
             </div>
 
-            <div className="text-gray-800 dark:text-gray-300 space-y-1">
+            <div className={`${COLORS.TEXT} ${COLORS.DARK_TEXT} space-y-1`}>
               {exp.responsibilities.map((resp, idx) => (
-                <p key={idx} className="flex items-start">
-                  <span className="mr-2 mt-2 ml-4">•</span>
-                  <span>{resp}</span>
+                <p key={idx} className="flex text-wrap items-start">
+                  <span className="mr-2 mt-1 ml-4">*</span>
+                  <span className='text-left'>{resp}</span>
                 </p>
               ))}
             </div>
-            <div className="text-gray-800 dark:text-gray-300 space-y-1 flex items-start">
-                <div className='flex items-center gap-2'>
+            <div className={`${COLORS.TEXT} ${COLORS.DARK_TEXT} space-y-1 flex items-start`}>
+                <div className='flex text-wrap items-center gap-2'>
                     <Wrench size={20}/>
                     <span>{exp.tools}</span>
                 </div>
@@ -111,19 +110,19 @@ const Experience = () => {
         ))}
       </div>
 
-      <h2 className="text-3xl text-blue-900 dark:text-blue-400 py-4 mt-8 font-medium font-burtons text-center">
+      <h2 className={`text-3xl ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} mt-6 py-4 font-medium font-burtons text-center`}>
         Education
       </h2>
 
       <div className="space-y-6">
         {education.map((edu, index) => (
-          <div key={index} className="border-l-4 border-blue-900 dark:border-blue-400 pl-4 space-y-2">
+          <div key={index} className={`border-l-4 ${COLORS.BORDER} ${COLORS.DARK_BORDER} pl-4 space-y-2`}>
             <div className="flex items-center gap-2">
-              <GraduationCap className="text-blue-900 dark:text-blue-400" size={24} />
-              <h3 className={`text-xl ${BoldStyle}`}>{edu.degree}</h3>
+              <GraduationCap className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}`} size={24} />
+              <h3 className={`text-xl font-semibold ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}`}>{edu.degree}</h3>
             </div>
             
-            <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 text-gray-600 dark:text-gray-400">
+            <div className={`flex flex-col md:flex-row md:items-center gap-2 md:gap-6 ${COLORS.TEXT} ${COLORS.DARK_TEXT}`}>
               <div className="flex items-center gap-1">
                 <Building2 size={16} />
                 <span>{edu.institution}</span>
@@ -137,10 +136,10 @@ const Experience = () => {
                 <span>{edu.period}</span>
               </div>
             </div>
-            <div className="text-gray-600 dark:text-gray-400 space-y-1 flex items-start">
-                <div className='flex items-center gap-1'>
-                    <Microscope />
-                    <span>{edu.thesis}</span>
+            <div className={`space-y-1 flex items-start ${COLORS.TEXT} ${COLORS.DARK_TEXT}`}>
+                <div className='flex items-center gap-2'>
+                    <Microscope size={20}/>
+                    <span className={`text-left ${COLORS.TEXT} ${COLORS.DARK_TEXT}`}>{edu.thesis}</span>
                 </div>
             </div>
           </div>

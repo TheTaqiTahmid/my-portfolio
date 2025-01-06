@@ -10,6 +10,7 @@ import dockerIcon from "../assets/docker-icon.svg";
 import kubernetesIcon from "../assets/kubernetes.svg";
 import prometheusIcon from "../assets/prometheus.svg";
 import grafanaIcon from "../assets/grafana.svg";
+import { COLORS } from "../constants";
 
 const Skills = () => {
   const skills = [
@@ -29,10 +30,10 @@ const Skills = () => {
 
   return (
     <div>
-      <h1 className="text-2xl py-5 font-burtons dark:text-blue-200">
+      <h1 className={`text-2xl py-5 font-burtons ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}`}>
         Tools and Languages
       </h1>
-      <div className="grid grid-cols-4 gap-6 text-md py-5 leading-8 text-gray-800 dark:text-gray-300 mx-auto max-w-2xl md:text-xl">
+      <div className={`grid grid-cols-4 gap-6 text-md py-5 leading-8 ${COLORS.TEXT} ${COLORS.DARK_TEXT} mx-auto max-w-2xl md:text-xl`}>
         {skills.map((skill) => (
           <div key={skill.name} className="flex flex-col items-center">
             <img src={skill.icon} alt={skill.name} className="h-10 w-10" />
