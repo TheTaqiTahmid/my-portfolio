@@ -36,7 +36,7 @@ const Navbar: React.FC<NavProps> = ({toggleDarkMode, darkMode}) => {
   return (
     <div className="w-full flex justify-center">
       <nav className="py-5 mb-6 flex justify-between dark:text-white w-full max-w-5xl px-4">
-          <button 
+          <button
             onClick={handleCopyEmail}
             className="flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded-lg transition-colors duration-200 group relative"
           >
@@ -51,7 +51,7 @@ const Navbar: React.FC<NavProps> = ({toggleDarkMode, darkMode}) => {
               {copied ? 'Copied!' : 'Click to copy'}
             </span>
           </button>
-          
+
           <ul className="flex items-center">
               <li className="transition ease-in-out delay-50 duration-100 cursor-pointer"
               onClick={toggleDarkMode}>
@@ -64,9 +64,9 @@ const Navbar: React.FC<NavProps> = ({toggleDarkMode, darkMode}) => {
               </li>
               <li className="transition ease-in-out delay-50 duration-100">
                   <div className="group relative">
-                  <a className="text-white p-2 ml-8 inline-flex" 
-                  href="https://www.linkedin.com/in/taqi-tahmid/details/featured/1735981754176/single-media-viewer/?profileId=ACoAACDU_GsBCgKtvw2bmzbVwTy2WixBG6-e3JM" 
-                  target="_blank" 
+                  <a className="text-white p-2 ml-8 inline-flex"
+                  href="https://www.linkedin.com/in/taqi-tahmid/details/featured/1735981754176/single-media-viewer/?profileId=ACoAACDU_GsBCgKtvw2bmzbVwTy2WixBG6-e3JM"
+                  target="_blank"
                   rel="noreferrer">
                     <FileText className="hover:scale-110 text-gray-800 dark:text-white" size={30} />
                   </a>

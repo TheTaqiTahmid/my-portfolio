@@ -8,6 +8,9 @@ import Footer from './components/Footer'
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Interests from './pages/Interests';
+import { POSTS } from './constants';
+import { BlogList } from "./components/BlogList";
+import { BlogPost } from "./components/BlogPost";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -30,6 +33,8 @@ function App() {
               <Route path='/experience' element={<Experience/>} />
               <Route path='/projects' element={<Projects/>} />
               <Route path='/Interests' element={<Interests />} />
+              <Route path="/blog" element={<BlogList posts={POSTS} />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
             </Routes>
           </Router>
           <Footer />

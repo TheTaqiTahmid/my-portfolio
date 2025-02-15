@@ -8,3 +8,18 @@ export const COLORS = {
 }
 
 export const EMAIL = 'taqitahmid@gmail.com'
+
+export const POSTS = [
+    {
+        slug: "deployment-daemonset-statefulset",
+        title: "Deployment VS DaemonSet VS StatefulSet",
+        description: "All the information you need to find the difference between Deployment, DaemonSet, and StatefulSet controllers used to deploy Pods",
+        date: "2025-01-10"
+    },
+    {
+        slug: "volumes",
+        title: "Volumes in Kubernes and how to manage them",
+        description: "What is a Volume, different types of volumes, how do you provision, and claim volumes in Kubernetes.",
+        date: "2025-01-10"
+    },
+];
