@@ -1,6 +1,24 @@
 My Portfolio Website
 =====================
 
+# Overview
+
+This is my personal portfolio website. It is a simple website that showcases
+my projects and skills. The wbsite has an Overview, Projects, Interests, and
+Experience section. The website is deployed on my self-hosted Kubernetes cluster.
+
+For more info regarding my homelab setup, please visit my
+[Homelab Repository](https://github.com/TheTaqiTahmid/homeserver)
+
+# Build
+
+This website is built using React and Typescript and is packaged as a container.
+
+```bash
+npm install
+npm run build
+```
+
 # Deploy
 
 This website is packaged as a container and deployed using nginx.
