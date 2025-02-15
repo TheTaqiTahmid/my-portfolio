@@ -9,6 +9,8 @@ export const COLORS = {
 
 export const EMAIL = 'taqitahmid@gmail.com'
 
+export const RESUME = 'https://www.linkedin.com/in/taqi-tahmid/overlay/1735981754176/single-media-viewer/?profileId=ACoAACDU_GsBCgKtvw2bmzbVwTy2WixBG6-e3JM'
+
 export const POSTS = [
     {
         slug: "deployment-daemonset-statefulset",
