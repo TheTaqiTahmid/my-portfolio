@@ -1,7 +1,7 @@
-import { Server, Coffee } from "lucide-react";
+import { Server, Coffee } from 'lucide-react'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <footer className="mt-16 py-6 border-t border-gray-200 dark:border-gray-800">
@@ -11,15 +11,15 @@ const Footer = () => {
             <Server size={16} className="inline-block" />
             <span>Self-hosted on my homelab Kubernetes cluster</span>
           </div>
-          
+
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-center">
             <span>© {currentYear} Taqi Tahmid</span>
             <span>•</span>
             <span>Built with React & Tailwind CSS</span>
             <span>•</span>
-            <a 
-              href="https://github.com/TheTaqiTahmid/my-portfolio.git" 
-              target="_blank" 
+            <a
+              href="https://github.com/TheTaqiTahmid/my-portfolio.git"
+              target="_blank"
               rel="noreferrer"
               className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >
@@ -29,14 +29,12 @@ const Footer = () => {
 
           <div className="flex items-center gap-2 text-xs">
             <Coffee size={14} className="inline-block" />
-            <span>
-              Powered by coffee and countless hours of debugging
-            </span>
+            <span>Powered by coffee and countless hours of debugging</span>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
