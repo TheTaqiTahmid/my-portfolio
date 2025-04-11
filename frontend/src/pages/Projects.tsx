@@ -1,5 +1,6 @@
 import { Github, Link } from 'lucide-react'
 import { COLORS } from '../constants'
+import { Tooltip } from '../components/Tooltip'
 
 const Projects = () => {
   const BoldStyle = 'text-blue-900 dark:text-blue-300 font-semibold'
@@ -96,6 +97,7 @@ const Projects = () => {
             <div className="flex gap-4">
               {project.links.map((link, linkIndex) => (
                 <div key={linkIndex} className="group relative">
+                  <Tooltip label={link.label} position="top">
                   <a
                     href={link.href}
                     target="_blank"
@@ -105,9 +107,7 @@ const Projects = () => {
                   >
                     {link.icon}
                   </a>
-                  <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-sm text-slate-100 opacity-0 transition before:absolute before:left-1/2 before:top-full before:-translate-x-1/2 before:border-4 before:border-transparent before:border-t-slate-800 before:content-[''] group-hover:opacity-100">
-                    {link.label}
-                  </span>
+                  </Tooltip>
                 </div>
               ))}
             </div>

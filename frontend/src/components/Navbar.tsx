@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Menu, Sun, Moon, FileText, Mail, Check, Copy } from 'lucide-react'
 import { COLORS, EMAIL, RESUME } from '../constants'
+import { Tooltip } from './Tooltip'
 
 interface NavProps {
   darkMode: boolean
@@ -11,6 +12,7 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
   const [copied, setCopied] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
+  const copyText = copied ? 'Copied!' : 'Click to copy'
 
   const handleCopyEmail = async () => {
     try {
@@ -49,12 +51,12 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
   return (
     <div className="w-full flex justify-center">
       <nav className="py-5 mb-6 flex justify-between dark:text-white w-full max-w-5xl px-4">
+        <Tooltip label={copyText} position='bottom'>
         <button
           onClick={handleCopyEmail}
           className="flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded-lg transition-colors duration-200 group relative"
         >
           <Mail size={25} className={`${COLORS.DARK_PRIMARY}`} />
-          <span>Email</span>
           {copied ? (
             <Check size={16} className="text-green-500" />
           ) : (
@@ -63,41 +65,34 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
               className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
             />
           )}
-          <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-xs text-slate-100 opacity-0 transition before:absolute before:left-1/2 before:top-full before:-translate-x-1/2 before:border-4 before:border-transparent before:border-t-slate-800 before:content-[''] group-hover:opacity-100">
-            {copied ? 'Copied!' : 'Click to copy'}
-          </span>
         </button>
-
+        </Tooltip>
         <ul className="flex items-center">
           <li
             className="transition ease-in-out delay-50 duration-100 cursor-pointer"
             onClick={toggleDarkMode}
           >
-            <div className="group relative">
-              {darkMode ? (
-                <Sun className="text-amber-400 hover:scale-110" size={30} />
-              ) : (
-                <Moon size={24} />
-              )}
-              <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-xs text-slate-100 opacity-0 transition before:absolute before:left-1/2 before:top-full before:-translate-x-1/2 before:border-4 before:border-transparent before:border-t-slate-800 before:content-[''] group-hover:opacity-100">
-                {darkMode ? 'Light Mode' : 'Dark Mode'}
-              </span>
-            </div>
+            <Tooltip label={darkMode ? 'Light Mode' : 'Dark Mode'} position='bottom'>
+              <div className="flex items-center space-x-2 mr-4">
+                {darkMode ? (
+                  <Sun className="text-amber-400 hover:scale-110" size={30} />
+                ) : (
+                  <Moon size={24} />
+                )}
+              </div>
+            </Tooltip>
           </li>
           <li className="transition ease-in-out delay-50 duration-100">
-            <div className="group relative">
+            <Tooltip label="Resume" position='bottom'>
               <a
-                className="text-white p-2 ml-8 inline-flex"
+                className="text-white flex items-center space-x-2 ml-4"
                 href={RESUME}
                 target="_blank"
                 rel="noreferrer"
               >
                 <FileText className="hover:scale-110 text-gray-800 dark:text-white" size={30} />
               </a>
-              <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-xs text-slate-100 opacity-0 transition before:absolute before:left-1/2 before:top-full before:-translate-x-1/2 before:border-4 before:border-transparent before:border-t-slate-800 before:content-[''] group-hover:opacity-100">
-                Resume
-              </span>
-            </div>
+            </Tooltip>
           </li>
           <li className="p-2 ml-5 cursor-pointer">
             <div ref={menuRef} className="group relative">

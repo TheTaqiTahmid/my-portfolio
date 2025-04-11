@@ -1,5 +1,6 @@
 import { Linkedin, Github, Award } from 'lucide-react'
 import { COLORS } from '../constants'
+import { Tooltip } from './Tooltip'
 
 const Introduction = () => {
   const BoldStyle = 'text-blue-900 dark:text-blue-300 font-semibold'
@@ -57,6 +58,7 @@ const Introduction = () => {
       <div className="flex justify-center gap-8 py-3">
         {socialLinks.map((link, index) => (
           <div key={index} className="group relative">
+            <Tooltip label={link.label} position="top">
             <a
               href={link.href}
               target="_blank"
@@ -66,9 +68,7 @@ const Introduction = () => {
             >
               {link.icon}
             </a>
-            <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-sm text-slate-100 opacity-0 transition before:absolute before:left-1/2 before:top-full before:-translate-x-1/2 before:border-4 before:border-transparent before:border-t-slate-800 before:content-[''] group-hover:opacity-100">
-              {link.label}
-            </span>
+            </Tooltip>
           </div>
         ))}
       </div>
