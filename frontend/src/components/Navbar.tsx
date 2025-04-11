@@ -26,6 +26,19 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
     localStorage.setItem('DARK_MODE', String(darkMode))
   }, [darkMode])
 
+  useEffect(() => {
+    const handleClickoutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickoutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickoutside)
+    }
+  })
+
   const menuItem = [
     { title: 'Home', href: '/' },
     { title: 'Experience', href: '/experience' },
