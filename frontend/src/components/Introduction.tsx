@@ -1,27 +1,8 @@
-import { Linkedin, Github, Award } from 'lucide-react'
-import { COLORS } from '../constants'
+import { COLORS, SOCIALLINKS } from '../constants'
 import { Tooltip } from './Tooltip'
 
 const Introduction = () => {
   const BoldStyle = 'text-blue-900 dark:text-blue-300 font-semibold'
-
-  const socialLinks = [
-    {
-      icon: <Linkedin size={32} />,
-      href: 'https://www.linkedin.com/in/taqi-tahmid/',
-      label: 'LinkedIn',
-    },
-    {
-      icon: <Github size={32} />,
-      href: 'https://github.com/TheTaqiTahmid',
-      label: 'GitHub',
-    },
-    {
-      icon: <Award size={32} />,
-      href: 'https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/3da54db2-f994-4148-a0ca-705ae1d748cd-mohammad-taqi-tahmid-094cf8b4-0db8-4a9f-b787-b4efbb2a90fe-certificate.pdf',
-      label: 'CKA Certificate',
-    },
-  ]
 
   return (
     <div className="text-center p-4 max-w-4xl mx-auto">
@@ -56,7 +37,7 @@ const Introduction = () => {
       </div>
 
       <div className="flex justify-center gap-8 py-3">
-        {socialLinks.map((link, index) => (
+        {SOCIALLINKS.map((link, index) => (
           <div key={index} className="group relative">
             <Tooltip label={link.label} position="top">
               <a
