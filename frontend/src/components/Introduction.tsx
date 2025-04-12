@@ -59,15 +59,15 @@ const Introduction = () => {
         {socialLinks.map((link, index) => (
           <div key={index} className="group relative">
             <Tooltip label={link.label} position="top">
-            <a
-              href={link.href}
-              target="_blank"
-              rel="noreferrer"
-              className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}  hover:text-sky-600 dark:hover:text-sky-500 transition-colors duration-200`}
-              aria-label={link.label}
-            >
-              {link.icon}
-            </a>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}  hover:text-sky-600 dark:hover:text-sky-500 transition-colors duration-200`}
+                aria-label={link.label}
+              >
+                {link.icon}
+              </a>
             </Tooltip>
           </div>
         ))}

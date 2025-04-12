@@ -51,28 +51,28 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
   return (
     <div className="w-full flex justify-center">
       <nav className="py-5 mb-6 flex justify-between dark:text-white w-full max-w-5xl px-4">
-        <Tooltip label={copyText} position='bottom'>
-        <button
-          onClick={handleCopyEmail}
-          className="flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded-lg transition-colors duration-200 group relative"
-        >
-          <Mail size={25} className={`${COLORS.DARK_PRIMARY}`} />
-          {copied ? (
-            <Check size={16} className="text-green-500" />
-          ) : (
-            <Copy
-              size={16}
-              className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-            />
-          )}
-        </button>
+        <Tooltip label={copyText} position="bottom">
+          <button
+            onClick={handleCopyEmail}
+            className="flex items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-800 px-3 py-2 rounded-lg transition-colors duration-200 group relative"
+          >
+            <Mail size={25} className={`${COLORS.DARK_PRIMARY}`} />
+            {copied ? (
+              <Check size={16} className="text-green-500" />
+            ) : (
+              <Copy
+                size={16}
+                className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              />
+            )}
+          </button>
         </Tooltip>
         <ul className="flex items-center">
           <li
             className="transition ease-in-out delay-50 duration-100 cursor-pointer"
             onClick={toggleDarkMode}
           >
-            <Tooltip label={darkMode ? 'Light Mode' : 'Dark Mode'} position='bottom'>
+            <Tooltip label={darkMode ? 'Light Mode' : 'Dark Mode'} position="bottom">
               <div className="flex items-center space-x-2 mr-4">
                 {darkMode ? (
                   <Sun className="text-amber-400 hover:scale-110" size={30} />
@@ -83,7 +83,7 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
             </Tooltip>
           </li>
           <li className="transition ease-in-out delay-50 duration-100">
-            <Tooltip label="Resume" position='bottom'>
+            <Tooltip label="Resume" position="bottom">
               <a
                 className="text-white flex items-center space-x-2 ml-4"
                 href={RESUME}

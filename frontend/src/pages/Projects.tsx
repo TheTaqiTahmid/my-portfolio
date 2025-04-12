@@ -98,15 +98,15 @@ const Projects = () => {
               {project.links.map((link, linkIndex) => (
                 <div key={linkIndex} className="group relative">
                   <Tooltip label={link.label} position="top">
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} hover:text-sky-600 dark:hover:text-sky-500 transition-colors duration-200`}
-                    aria-label={link.label}
-                  >
-                    {link.icon}
-                  </a>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} hover:text-sky-600 dark:hover:text-sky-500 transition-colors duration-200`}
+                      aria-label={link.label}
+                    >
+                      {link.icon}
+                    </a>
                   </Tooltip>
                 </div>
               ))}
