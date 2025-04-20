@@ -1,4 +1,5 @@
 import { Linkedin, Github, Award, Link } from 'lucide-react'
+import { Camera, Plane, Film, Server, Cpu, Trophy, Car, Gamepad2 } from 'lucide-react'
 import pythonIcon from './assets/python.svg'
 import robotIcon from './assets/robotframework-svgrepo-com.svg'
 import goIcon from './assets/go-original.svg'
@@ -25,7 +26,6 @@ export const EMAIL = 'taqitahmid@gmail.com'
 
 export const RESUME =
   'https://www.linkedin.com/in/taqi-tahmid/overlay/1735981754176/single-media-viewer/?profileId=ACoAACDU_GsBCgKtvw2bmzbVwTy2WixBG6-e3JM'
-
 
 export const PROJECTS = [
   {
@@ -118,4 +118,129 @@ export const SKILLS = [
   { name: 'Kubernetes', icon: kubernetesIcon },
   { name: 'Prometheus', icon: prometheusIcon },
   { name: 'Grafana', icon: grafanaIcon },
+]
+
+export const INTERESTS = [
+  {
+    title: 'Travelling',
+    icon: <Plane size={32} />,
+    description:
+      'Exploring new places, experiencing different cultures, and creating lasting memories through adventures around the world. From scenic landscapes to bustling cities, every journey is an opportunity to learn and grow.',
+  },
+  {
+    title: 'Photography',
+    icon: <Camera size={32} />,
+    description:
+      'Capturing moments and perspectives through the lens. Particularly interested in landscape and street photography, always looking to improve composition skills and trying new techniques.',
+  },
+  {
+    title: 'Movies & Shows',
+    icon: <Film size={32} />,
+    description:
+      'Passionate about cinema across various genres and cultures. Enjoy analyzing cinematography, storytelling techniques, and discovering hidden gems from different parts of the world.',
+  },
+  {
+    title: 'Homelab',
+    icon: <Server size={32} />,
+    description:
+      'Managing a personal homelab setup for experimenting with self-hosted services, networking configurations, and learning about system administration in a hands-on environment.',
+  },
+  {
+    title: 'New Technologies',
+    icon: <Cpu size={32} />,
+    description:
+      'Keeping up with the latest technological advancements, particularly in cloud computing, automation, and emerging DevOps tools. Enjoy experimenting with new frameworks and platforms.',
+  },
+  {
+    title: 'Playing Video Games',
+    icon: <Gamepad2 size={32} />,
+    description:
+      'Enthusiastic gamer with a deep appreciation for interactive storytelling and virtual worlds. Enjoy exploring diverse genres from immersive RPGs to strategic multiplayer games.',
+  },
+  {
+    title: 'Sports',
+    icon: <Trophy size={32} />,
+    description: 'Avid sports enthusiast following multiple disciplines:',
+    subInterests: [
+      {
+        name: 'Football',
+        details:
+          'Following major leagues and international tournaments, appreciating the tactical aspects and team dynamics of the beautiful game.',
+      },
+      {
+        name: 'Cricket',
+        details:
+          'Enjoying both test matches and limited-overs formats, following international competitions and analyzing game strategies.',
+      },
+      {
+        name: 'Formula 1',
+        icon: <Car size={24} />,
+        details:
+          'Following the high-speed world of F1, keeping up with team developments, race strategies, and technical innovations in motorsport.',
+      },
+    ],
+  },
+]
+
+export const EXPERIENCE = [
+  {
+    title: 'Experienced Developer (DevOps)',
+    company: 'Ericsson',
+    location: 'Jorvas, Finland',
+    period: 'November-2022 - Present',
+    responsibilities: [
+      'Managing and optimizing Kubernetes clusters in production environments',
+      'Designing and implementing CI/CD pipelines for end to end product development flow using Jenkins',
+      'Automating infrastructure deployment using Terraform and Ansible',
+      'Develop and maintain monitoring solutions of various resources for greater observability and troubleshooting',
+      'Actively support development teams regarding product development flow and infrastructure issues',
+      'Develop and perform automated end-to-end product testing with Python, Robot Framework, Jenkins, Bash, etc.',
+    ],
+    tools: 'Kubernetes, Docker, KVM, Openstack, Ansible, Terraform, Prometheus, Grafana',
+  },
+  {
+    title: 'Test Engineer',
+    company: 'Nokia',
+    location: 'Espoo, Finland',
+    period: 'June-2021 - October-2022',
+    responsibilities: [
+      'Develop and maintain Cloud RAN E2E test setup for vCU and vDU application testing on top of RedHat Openshift',
+      'Develop automation and CI/CD flow for Cloud RAN testing using Python, Robot Framework, Bash, Jenkins etc.',
+      'Develop and perform automated testing to validate the functionality of Nokia Cloud RAN base stations',
+      'Integrate new hardware and software into the test setup',
+      'Perform hands on debugging and log analysis to nd root cause and solve any software or hardware issues',
+    ],
+    tools: 'Keysight Nemo Outdoor, Nemo Analyze, Qualcomm PCAT, QCAT, QXDM',
+  },
+  {
+    title: 'Testing and Prototyping Intern',
+    company: 'GE Healthcare',
+    location: 'Helsinki, Finland',
+    period: 'Jan-2019 - May-2021',
+    responsibilities: [
+      'Planning, writing, and performing manual and automated tests of different prototype wireless medical devices',
+      'Designing driver and PCB circuits in Altium Designer to test the performance of the Digital Sensor Interface',
+      'Ensuring the PCB componets used in the devices are EU RoHS and REACH compliant',
+    ],
+    tools:
+      'LTSpice, Altium Designer, HP-ALM, Vector Network Analyzer, Spectrum Analyzer, Climate Chamber',
+  },
+]
+
+export const EDUCATION = [
+  {
+    degree: "Master's in Wireless Communication & RF Systems",
+    institution: 'Tampere University',
+    location: 'Tampere, Finland',
+    period: '2018 - 2020',
+    thesis: '5G Reference Signals and their Possibility to be for 5G Based Positioning',
+  },
+  {
+    degree: "Bachelor's in Electrical & Electronic Engineering",
+    institution: 'Khulna University of Engineering & Technology',
+    location: 'Khulna, Bangladesh',
+    period: '2013 - 2017',
+    thesis:
+      'Density-based smart traffic control system using Canny edge detection technique using Digital Image Processing',
+  },
 ]
