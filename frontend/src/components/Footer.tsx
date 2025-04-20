@@ -4,7 +4,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="mt-16 py-6 border-t border-gray-200 dark:border-gray-800">
+    <footer className="mt-24 py-6 border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
           <div className="flex items-center gap-2">
@@ -29,7 +29,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-2 text-xs">
             <Coffee size={14} className="inline-block" />
-            <span>Powered by coffee and countless hours of debugging</span>
+            <span>Powered by coffee and Love</span>
           </div>
         </div>
       </div>
