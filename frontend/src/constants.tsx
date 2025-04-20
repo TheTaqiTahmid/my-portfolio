@@ -1,4 +1,5 @@
 import { Linkedin, Github, Award, Link } from 'lucide-react'
+import { Aperture, Instagram, Mail, Globe, ScrollText } from 'lucide-react'
 import { Camera, Plane, Film, Server, Cpu, Trophy, Car, Gamepad2 } from 'lucide-react'
 import pythonIcon from './assets/python.svg'
 import robotIcon from './assets/robotframework-svgrepo-com.svg'
@@ -87,23 +88,58 @@ export const PROJECTS = [
   },
 ]
 
-export const SOCIALLINKS = [
-  {
-    icon: <Linkedin size={32} />,
-    href: 'https://www.linkedin.com/in/taqi-tahmid/',
-    label: 'LinkedIn',
-  },
-  {
-    icon: <Github size={32} />,
-    href: 'https://github.com/TheTaqiTahmid',
-    label: 'GitHub',
-  },
-  {
-    icon: <Award size={32} />,
-    href: 'https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/3da54db2-f994-4148-a0ca-705ae1d748cd-mohammad-taqi-tahmid-094cf8b4-0db8-4a9f-b787-b4efbb2a90fe-certificate.pdf',
-    label: 'CKA Certificate',
-  },
-]
+export const iconClass = 'text-blue-600 dark:text-blue-400 mr-3'
+
+export const SOCIALLINKS = {
+  contact: [
+    {
+      icon: <Mail size={20} className={iconClass} />,
+      href: 'mailto:taqitahmid@gmail.com',
+      text: 'Email Me',
+    },
+    {
+      icon: <Globe size={20} className={iconClass} />,
+      href: 'https://portfolio.tahmidcloud.com/',
+      text: 'My Website',
+    },
+  ],
+  connect: [
+    {
+      icon: <Linkedin size={20} className={iconClass} />,
+      href: 'https://www.linkedin.com/in/taqi-tahmid/',
+      text: 'LinkedIn',
+    },
+    {
+      icon: <Github size={20} className={iconClass} />,
+      href: 'https://github.com/theTaqiTahmid',
+      text: 'GitHub',
+    },
+  ],
+  follow: [
+    {
+      icon: <Aperture size={20} className={iconClass} />,
+      href: 'https://500px.com/p/taqi1203050?view=photos',
+      text: 'My Photography',
+    },
+    {
+      icon: <Instagram size={20} className={iconClass} />,
+      href: 'https://www.instagram.com/tahmidtaqi/',
+      text: 'Instagram',
+    },
+  ],
+  publications: [
+    {
+      icon: <Award size={20} className={iconClass} />,
+      href: 'https://www.credly.com/badges/abb049aa-d811-4954-a460-8c7351ceba3e/public_url',
+      text: 'CKA Certification',
+    },
+    {
+      icon: <ScrollText size={20} className={iconClass} />,
+      href: 'https://scholar.google.fi/citations?user=w3BoP0AAAAAJ&hl=en',
+      text: 'Google Scholar',
+    },
+  ],
+}
 
 export const SKILLS = [
   { name: 'Python', icon: pythonIcon },

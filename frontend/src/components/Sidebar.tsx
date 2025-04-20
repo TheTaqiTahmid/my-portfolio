@@ -1,5 +1,4 @@
-import { Aperture, Award, Github, Instagram, Linkedin, Mail, Globe, ScrollText } from 'lucide-react'
-import { COLORS } from '../constants'
+import { COLORS, SOCIALLINKS } from '../constants'
 
 interface LinkProps {
   href: string
@@ -26,59 +25,6 @@ const Link: React.FC<LinkProps> = ({ icon, href, children }) => {
 }
 
 const Sidebar = () => {
-  const iconClass = 'text-blue-600 dark:text-blue-400 mr-3'
-
-  const links = {
-    contact: [
-      {
-        icon: <Mail size={20} className={iconClass} />,
-        href: 'mailto:taqitahmid@gmail.com',
-        text: 'Email Me',
-      },
-      {
-        icon: <Globe size={20} className={iconClass} />,
-        href: 'https://portfolio.tahmidcloud.com/',
-        text: 'My Website',
-      },
-    ],
-    connect: [
-      {
-        icon: <Linkedin size={20} className={iconClass} />,
-        href: 'https://www.linkedin.com/in/taqi-tahmid/',
-        text: 'LinkedIn',
-      },
-      {
-        icon: <Github size={20} className={iconClass} />,
-        href: 'https://github.com/theTaqiTahmid',
-        text: 'GitHub',
-      },
-    ],
-    follow: [
-      {
-        icon: <Aperture size={20} className={iconClass} />,
-        href: 'https://500px.com/p/taqi1203050?view=photos',
-        text: 'My Photography',
-      },
-      {
-        icon: <Instagram size={20} className={iconClass} />,
-        href: 'https://www.instagram.com/tahmidtaqi/',
-        text: 'Instagram',
-      },
-    ],
-    publications: [
-      {
-        icon: <Award size={20} className={iconClass} />,
-        href: 'https://www.credly.com/badges/abb049aa-d811-4954-a460-8c7351ceba3e/public_url',
-        text: 'CKA Certification',
-      },
-      {
-        icon: <ScrollText size={20} className={iconClass} />,
-        href: 'https://scholar.google.fi/citations?user=w3BoP0AAAAAJ&hl=en',
-        text: 'Google Scholar',
-      },
-    ],
-  }
-
   const SectionTitle = ({ children }: { children: React.ReactNode }) => (
     <h2 className={`mt-6 mb-4 text-lg font-semibold ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}`}>
       {children}
@@ -90,28 +36,28 @@ const Sidebar = () => {
       className={`p-6 max-w-xs mx-auto ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} rounded-xl shadow-sm`}
     >
       <SectionTitle>Contact</SectionTitle>
-      {links.contact.map((link, index) => (
+      {SOCIALLINKS.contact.map((link, index) => (
         <Link key={index} icon={link.icon} href={link.href}>
           {link.text}
         </Link>
       ))}
 
       <SectionTitle>Connect</SectionTitle>
-      {links.connect.map((link, index) => (
+      {SOCIALLINKS.connect.map((link, index) => (
         <Link key={index} icon={link.icon} href={link.href}>
           {link.text}
         </Link>
       ))}
 
       <SectionTitle>Follow</SectionTitle>
-      {links.follow.map((link, index) => (
+      {SOCIALLINKS.follow.map((link, index) => (
         <Link key={index} icon={link.icon} href={link.href}>
           {link.text}
         </Link>
       ))}
 
       <SectionTitle>Achievements</SectionTitle>
-      {links.publications.map((link, index) => (
+      {SOCIALLINKS.publications.map((link, index) => (
         <Link key={index} icon={link.icon} href={link.href}>
           {link.text}
         </Link>
