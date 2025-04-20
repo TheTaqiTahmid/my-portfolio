@@ -1,70 +1,7 @@
 import { Building2, Calendar, GraduationCap, MapPin, Microscope, Wrench } from 'lucide-react'
-import { COLORS } from '../constants'
+import { COLORS, EXPERIENCE, EDUCATION,  } from '../constants'
 
 const Experience = () => {
-  const experiences = [
-    {
-      title: 'Experienced Developer (DevOps)',
-      company: 'Ericsson',
-      location: 'Jorvas, Finland',
-      period: 'November-2022 - Present',
-      responsibilities: [
-        'Managing and optimizing Kubernetes clusters in production environments',
-        'Designing and implementing CI/CD pipelines for end to end product development flow using Jenkins',
-        'Automating infrastructure deployment using Terraform and Ansible',
-        'Develop and maintain monitoring solutions of various resources for greater observability and troubleshooting',
-        'Actively support development teams regarding product development flow and infrastructure issues',
-        'Develop and perform automated end-to-end product testing with Python, Robot Framework, Jenkins, Bash, etc.',
-      ],
-      tools: 'Kubernetes, Docker, KVM, Openstack, Ansible, Terraform, Prometheus, Grafana',
-    },
-    {
-      title: 'Test Engineer',
-      company: 'Nokia',
-      location: 'Espoo, Finland',
-      period: 'June-2021 - October-2022',
-      responsibilities: [
-        'Develop and maintain Cloud RAN E2E test setup for vCU and vDU application testing on top of RedHat Openshift',
-        'Develop automation and CI/CD flow for Cloud RAN testing using Python, Robot Framework, Bash, Jenkins etc.',
-        'Develop and perform automated testing to validate the functionality of Nokia Cloud RAN base stations',
-        'Integrate new hardware and software into the test setup',
-        'Perform hands on debugging and log analysis to nd root cause and solve any software or hardware issues',
-      ],
-      tools: 'Keysight Nemo Outdoor, Nemo Analyze, Qualcomm PCAT, QCAT, QXDM',
-    },
-    {
-      title: 'Testing and Prototyping Intern',
-      company: 'GE Healthcare',
-      location: 'Helsinki, Finland',
-      period: 'Jan-2019 - May-2021',
-      responsibilities: [
-        'Planning, writing, and performing manual and automated tests of different prototype wireless medical devices',
-        'Designing driver and PCB circuits in Altium Designer to test the performance of the Digital Sensor Interface',
-        'Ensuring the PCB componets used in the devices are EU RoHS and REACH compliant',
-      ],
-      tools:
-        'LTSpice, Altium Designer, HP-ALM, Vector Network Analyzer, Spectrum Analyzer, Climate Chamber',
-    },
-  ]
-
-  const education = [
-    {
-      degree: "Master's in Wireless Communication & RF Systems",
-      institution: 'Tampere University',
-      location: 'Tampere, Finland',
-      period: '2018 - 2020',
-      thesis: '5G Reference Signals and their Possibility to be for 5G Based Positioning',
-    },
-    {
-      degree: "Bachelor's in Electrical & Electronic Engineering",
-      institution: 'Khulna University of Engineering & Technology',
-      location: 'Khulna, Bangladesh',
-      period: '2013 - 2017',
-      thesis:
-        'Density-based smart traffic control system using Canny edge detection technique using Digital Image Processing',
-    },
-  ]
-
   return (
     <div className="p-4 max-w-4xl mx-auto">
       <h2
@@ -74,7 +11,7 @@ const Experience = () => {
       </h2>
 
       <div className="space-y-8">
-        {experiences.map((exp, index) => (
+        {EXPERIENCE.map((exp, index) => (
           <div
             key={index}
             className={`border-l-4 ${COLORS.BORDER} ${COLORS.DARK_BORDER} pl-4 space-y-2`}
@@ -128,7 +65,7 @@ const Experience = () => {
       </h2>
 
       <div className="space-y-6">
-        {education.map((edu, index) => (
+        {EDUCATION.map((edu, index) => (
           <div
             key={index}
             className={`border-l-4 ${COLORS.BORDER} ${COLORS.DARK_BORDER} pl-4 space-y-2`}
