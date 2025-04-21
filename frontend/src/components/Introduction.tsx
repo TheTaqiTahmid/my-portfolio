@@ -1,5 +1,4 @@
-import { COLORS, SOCIALLINKS } from '../constants'
-import { Tooltip } from './Tooltip'
+import { COLORS } from '../constants'
 
 const Introduction = () => {
   const BoldStyle = 'text-blue-900 dark:text-blue-300 font-semibold'
@@ -34,24 +33,6 @@ const Introduction = () => {
           University. My expertise spans across the entire DevOps lifecycle, from cluster management
           and infrastructure automation to implementing robust testing frameworks.
         </p>
-      </div>
-
-      <div className="flex justify-center gap-8 py-3">
-        {SOCIALLINKS.map((link, index) => (
-          <div key={index} className="group relative">
-            <Tooltip label={link.label} position="top">
-              <a
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className={`${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY}  hover:text-sky-600 dark:hover:text-sky-500 transition-colors duration-200`}
-                aria-label={link.label}
-              >
-                {link.icon}
-              </a>
-            </Tooltip>
-          </div>
-        ))}
       </div>
     </div>
   )

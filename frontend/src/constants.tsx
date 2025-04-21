@@ -1,4 +1,6 @@
 import { Linkedin, Github, Award, Link } from 'lucide-react'
+import { Aperture, Instagram, Mail, Globe, ScrollText } from 'lucide-react'
+import { Camera, Plane, Film, Server, Cpu, Trophy, Car, Gamepad2 } from 'lucide-react'
 import pythonIcon from './assets/python.svg'
 import robotIcon from './assets/robotframework-svgrepo-com.svg'
 import goIcon from './assets/go-original.svg'
@@ -86,23 +88,58 @@ export const PROJECTS = [
   },
 ]
 
-export const SOCIALLINKS = [
-  {
-    icon: <Linkedin size={32} />,
-    href: 'https://www.linkedin.com/in/taqi-tahmid/',
-    label: 'LinkedIn',
-  },
-  {
-    icon: <Github size={32} />,
-    href: 'https://github.com/TheTaqiTahmid',
-    label: 'GitHub',
-  },
-  {
-    icon: <Award size={32} />,
-    href: 'https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/3da54db2-f994-4148-a0ca-705ae1d748cd-mohammad-taqi-tahmid-094cf8b4-0db8-4a9f-b787-b4efbb2a90fe-certificate.pdf',
-    label: 'CKA Certificate',
-  },
-]
+export const iconClass = 'text-blue-600 dark:text-blue-400 mr-3'
+
+export const SOCIALLINKS = {
+  contact: [
+    {
+      icon: <Mail size={20} className={iconClass} />,
+      href: 'mailto:taqitahmid@gmail.com',
+      text: 'Email Me',
+    },
+    {
+      icon: <Globe size={20} className={iconClass} />,
+      href: 'https://portfolio.tahmidcloud.com/',
+      text: 'Website',
+    },
+  ],
+  connect: [
+    {
+      icon: <Linkedin size={20} className={iconClass} />,
+      href: 'https://www.linkedin.com/in/taqi-tahmid/',
+      text: 'LinkedIn',
+    },
+    {
+      icon: <Github size={20} className={iconClass} />,
+      href: 'https://github.com/theTaqiTahmid',
+      text: 'GitHub',
+    },
+  ],
+  follow: [
+    {
+      icon: <Aperture size={20} className={iconClass} />,
+      href: 'https://500px.com/p/taqi1203050?view=photos',
+      text: 'Photography',
+    },
+    {
+      icon: <Instagram size={20} className={iconClass} />,
+      href: 'https://www.instagram.com/tahmidtaqi/',
+      text: 'Instagram',
+    },
+  ],
+  publications: [
+    {
+      icon: <Award size={20} className={iconClass} />,
+      href: 'https://www.credly.com/badges/abb049aa-d811-4954-a460-8c7351ceba3e/public_url',
+      text: 'CKA Certification',
+    },
+    {
+      icon: <ScrollText size={20} className={iconClass} />,
+      href: 'https://scholar.google.fi/citations?user=w3BoP0AAAAAJ&hl=en',
+      text: 'Google Scholar',
+    },
+  ],
+}
 
 export const SKILLS = [
   { name: 'Python', icon: pythonIcon },
@@ -117,6 +154,68 @@ export const SKILLS = [
   { name: 'Kubernetes', icon: kubernetesIcon },
   { name: 'Prometheus', icon: prometheusIcon },
   { name: 'Grafana', icon: grafanaIcon },
+]
+
+export const INTERESTS = [
+  {
+    title: 'Travelling',
+    icon: <Plane size={32} />,
+    description:
+      'Exploring new places, experiencing different cultures, and creating lasting memories through adventures around the world. From scenic landscapes to bustling cities, every journey is an opportunity to learn and grow.',
+  },
+  {
+    title: 'Photography',
+    icon: <Camera size={32} />,
+    description:
+      'Capturing moments and perspectives through the lens. Particularly interested in landscape and street photography, always looking to improve composition skills and trying new techniques.',
+  },
+  {
+    title: 'Movies & Shows',
+    icon: <Film size={32} />,
+    description:
+      'Passionate about cinema across various genres and cultures. Enjoy analyzing cinematography, storytelling techniques, and discovering hidden gems from different parts of the world.',
+  },
+  {
+    title: 'Homelab',
+    icon: <Server size={32} />,
+    description:
+      'Managing a personal homelab setup for experimenting with self-hosted services, networking configurations, and learning about system administration in a hands-on environment.',
+  },
+  {
+    title: 'New Technologies',
+    icon: <Cpu size={32} />,
+    description:
+      'Keeping up with the latest technological advancements, particularly in cloud computing, automation, and emerging DevOps tools. Enjoy experimenting with new frameworks and platforms.',
+  },
+  {
+    title: 'Playing Video Games',
+    icon: <Gamepad2 size={32} />,
+    description:
+      'Enthusiastic gamer with a deep appreciation for interactive storytelling and virtual worlds. Enjoy exploring diverse genres from immersive RPGs to strategic multiplayer games.',
+  },
+  {
+    title: 'Sports',
+    icon: <Trophy size={32} />,
+    description: 'Avid sports enthusiast following multiple disciplines:',
+    subInterests: [
+      {
+        name: 'Football',
+        details:
+          'Following major leagues and international tournaments, appreciating the tactical aspects and team dynamics of the beautiful game.',
+      },
+      {
+        name: 'Cricket',
+        details:
+          'Enjoying both test matches and limited-overs formats, following international competitions and analyzing game strategies.',
+      },
+      {
+        name: 'Formula 1',
+        icon: <Car size={24} />,
+        details:
+          'Following the high-speed world of F1, keeping up with team developments, race strategies, and technical innovations in motorsport.',
+      },
+    ],
+  },
 ]
 
 export const EXPERIENCE = [

@@ -1,5 +1,5 @@
 import { Building2, Calendar, GraduationCap, MapPin, Microscope, Wrench } from 'lucide-react'
-import { COLORS, EXPERIENCE, EDUCATION,  } from '../constants'
+import { COLORS, EXPERIENCE, EDUCATION } from '../constants'
 
 const Experience = () => {
   return (

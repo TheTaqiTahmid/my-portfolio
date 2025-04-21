@@ -29,7 +29,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-2 text-xs">
             <Coffee size={14} className="inline-block" />
-            <span>Powered by coffee and countless hours of debugging</span>
+            <span>Powered by coffee and Love</span>
           </div>
         </div>
       </div>
