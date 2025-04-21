@@ -39,6 +39,7 @@ function App() {
                   </Routes>
                 </Router>
               </div>
+              <div className="hidden md:block md:w-1/4 md:max-w-[260px] md:max-h-[900px]"></div>
             </div>
             <Footer />
           </section>

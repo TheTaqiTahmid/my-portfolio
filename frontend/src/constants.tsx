@@ -100,7 +100,7 @@ export const SOCIALLINKS = {
     {
       icon: <Globe size={20} className={iconClass} />,
       href: 'https://portfolio.tahmidcloud.com/',
-      text: 'My Website',
+      text: 'Website',
     },
   ],
   connect: [
@@ -119,7 +119,7 @@ export const SOCIALLINKS = {
     {
       icon: <Aperture size={20} className={iconClass} />,
       href: 'https://500px.com/p/taqi1203050?view=photos',
-      text: 'My Photography',
+      text: 'Photography',
     },
     {
       icon: <Instagram size={20} className={iconClass} />,
