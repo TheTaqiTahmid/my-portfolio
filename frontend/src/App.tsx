@@ -25,11 +25,11 @@ function App() {
         <main className="bg-amber-50 px-10 dark:bg-gray-900">
           <section className="min-h-screen">
             <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-            <div className="flex flex-row h-full">
-              <div className="w-1/4 max-w-[260px] max-h-[928px] border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-sm">
+            <div className="md:flex md:flex-row md:h-full">
+              <div className="mb-4 md:w-1/4 md:max-w-[260px] md:max-h-[900px] border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-sm">
                 <Sidebar />
               </div>
-              <div className="flex-1">
+              <div className="md:flex-1">
                 <Router>
                   <Routes>
                     <Route path="/" element={<Home />} />
