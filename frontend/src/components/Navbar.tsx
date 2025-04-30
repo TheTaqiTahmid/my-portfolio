@@ -102,7 +102,8 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
 
               {/* Dropdown Menu */}
               {isMenuOpen && (
-                <div className="absolute right-0 mt-3 w-36 rounded-md shadow-lg bg-amber-50 dark:bg-gray-800 ring-1 ring-black ring-opacity-5">
+                // Dropdown Menu. The z value is set to 10 so that it appears above other elements.
+                <div className="absolute right-0 mt-3 w-36 rounded-md shadow-lg bg-amber-50 dark:bg-gray-800 ring-1 ring-black ring-opacity-5 z-10">
                   <div className="py-1" role="menu" aria-orientation="vertical">
                     {menuItem.map((item) => (
                       <a
