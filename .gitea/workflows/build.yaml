@@ -47,10 +47,10 @@ jobs:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          buildah login -u "$USERNAME" -p "$PASSWORD" "$REGISTRY"
+          sudo buildah login -u "$USERNAME" -p "$PASSWORD" "$REGISTRY"
 
       - name: Build Image with Buildah
         env:
           REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
         run: |
-          buildah bud -t "$REGISTRY"/my-portfolio-app:latest .
+          sudo buildah bud -t "$REGISTRY"/my-portfolio-app:latest .
