@@ -28,8 +28,6 @@ jobs:
 
   build-and-release-image:
     runs-on: ubuntu-latest
-    container:
-      image: quay.io/podman/stable
     needs: build-portfolio-website
     if: success()
     steps:
@@ -39,6 +37,7 @@ jobs:
           fetch-depth: 0 # all history for all branches and tags
 
       - name: Login to Image registry
+        container: quay.io/podman/stable
         env:
           REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
