@@ -38,8 +38,8 @@ function create_role() {
     local namespace="$2"
 
     kubectl create role "$user" \
-        --verb=get,list,watch,create,update,delete,patch \
-        --resource=pods,services,deployments,secrets,configmaps \
+        --verb=get,list,watch,create,update,delete,patch,exec \
+        --resource=pods,pods/exec,services,deployments,secrets,configmaps \
         --namespace "$namespace" \
         --dry-run=client -o yaml | kubectl apply -f -
 

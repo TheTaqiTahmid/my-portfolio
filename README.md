@@ -32,3 +32,7 @@ docker push $DOCKER_REGISTRY/my-portfolio-app:latest
 # Check the registry
 curl -u user:pass https://$DOCKER_REGISTRY/v2/_catalog
 ```
+
+# CI/CD
+Run in Gitea Actions within kubernetes cluster
+Follow: https://tobru.ch/gitea-actions-container-builds/
