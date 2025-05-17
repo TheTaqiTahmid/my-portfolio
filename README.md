@@ -36,3 +36,10 @@ curl -u user:pass https://$DOCKER_REGISTRY/v2/_catalog
 # CI/CD
 Run in Gitea Actions within kubernetes cluster
 Follow: https://tobru.ch/gitea-actions-container-builds/
+
+Current, the project has workflow files for:
+- Build and push the container to the registry
+- Deploy the container to the Kubernetes cluster
+
+Thus making a commit to the master branch will automatically build the
+container and deploy it to the cluster.
