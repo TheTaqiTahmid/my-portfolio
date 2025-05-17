@@ -48,7 +48,7 @@ jobs:
         with:
           driver: kubernetes
           driver-opts: |
-            namespace=act-runner
+            namespace=gitea
             qemu.install=true
 
       - name: Login to Docker registry
