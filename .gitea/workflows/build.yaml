@@ -38,11 +38,11 @@ jobs:
 
       - name: Login to Image registry
         image: quay.io/podman/stable
-        env:
+        environment:
           REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
+        commands: |
           podman build -t "${REGISTRY}/my-portfolio:latest" .
           podman login -u "${USERNAME}" -p "${PASSWORD}" "${REGISTRY}"
           podman push "${REGISTRY}/my-portfolio:latest"
