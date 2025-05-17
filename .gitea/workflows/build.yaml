@@ -28,8 +28,8 @@ jobs:
 
   build-and-release-image:
     runs-on: ubuntu-latest
-    # container:
-    #   image: catthehacker/ubuntu:act-latest
+    container:
+      image: ghcr.io/catthehacker/ubuntu:act-22.04
     needs: build-portfolio-website
     if: success()
     steps:
