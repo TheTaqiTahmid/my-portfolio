@@ -60,10 +60,8 @@ jobs:
 
       - name: Build Docker image
         uses: docker/build-push-action@v5
-        env:
-          REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
         with:
           context: .
           file: Dockerfile
           push: true
-          tags: ${REGISTRY}/my-portfolio:latest
+          tags: registry.tahmidcloud.com/my-portfolio:latest
