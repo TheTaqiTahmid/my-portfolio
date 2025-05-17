@@ -36,13 +36,15 @@ jobs:
         with:
           fetch-depth: 0 # all history for all branches and tags
 
-      - name: Login to Image registry
-        image: quay.io/podman/stable
-        environment:
+      - name: Build and push Docker image
+        env:
           REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        commands: |
-          podman build -t "${REGISTRY}/my-portfolio:latest" .
-          podman login -u "${USERNAME}" -p "${PASSWORD}" "${REGISTRY}"
-          podman push "${REGISTRY}/my-portfolio:latest"
+        with:
+          image: quay.io/podman/stable
+          options: --volumes-from=${{ env.JOB_CONTAINER_NAME }}
+          run: |
+            podman build -t "${REGISTRY}/my-portfolio:latest" .
+            podman login -u "${USERNAME}" -p "${PASSWORD}" "${REGISTRY}"
+            podman push "${REGISTRY}/my-portfolio:latest"
