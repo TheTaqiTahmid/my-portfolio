@@ -64,4 +64,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: registry.tahmidcloud.com/my-portfolio:latest
+          tags: ${{ secrets.DOCKER_REGISTRY }}/my-portfolio:1.0
