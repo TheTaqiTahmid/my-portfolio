@@ -27,7 +27,9 @@ jobs:
         run: cd frontend && npm run build
 
   build-and-push-docker-image:
-    runs-on: catthehacker/ubuntu:act-latest
+    runs-on: ubuntu-latest
+    container:
+      image: catthehacker/ubuntu:act-latest
     needs: build-portfolio-website
     if: success()
     steps:
