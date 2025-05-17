@@ -28,14 +28,11 @@ jobs:
 
   build-and-release-image:
     runs-on: ubuntu-latest
+    container:
+      image: quay.io/podman/stable
     needs: build-portfolio-website
     if: success()
     steps:
-      - name: Install Buildah
-        run: |
-          apt-get update
-          apt-get install -y buildah
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -47,10 +44,6 @@ jobs:
           USERNAME: ${{ secrets.DOCKER_USERNAME }}
           PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          sudo buildah login -u "$USERNAME" -p "$PASSWORD" "$REGISTRY"
-
-      - name: Build Image with Buildah
-        env:
-          REGISTRY: ${{ secrets.DOCKER_REGISTRY }}
-        run: |
-          sudo buildah bud -t "$REGISTRY"/my-portfolio-app:latest .
+          podman build -t "${REGISTRY}/my-portfolio:latest" .
+          podman login -u "${USERNAME}" -p "${PASSWORD}" "${REGISTRY}"
+          podman push "${REGISTRY}/my-portfolio:latest"
