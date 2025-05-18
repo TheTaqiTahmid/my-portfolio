@@ -104,17 +104,21 @@ function main() {
 
     while [[ "$#" -gt 0 ]]; do
         case $1 in
-        --namespace)
+        -n|--namespace)
             namespace="$2"
             shift
             ;;
-        --user)
+        -u|--user)
             user="$2"
             shift
             ;;
-        --kubeconfig)
+        -k|--kubeconfig)
             kubeconfig="$2"
             shift
+            ;;
+        -h|--help)
+            usage
+            exit 0
             ;;
         *)
             usage
