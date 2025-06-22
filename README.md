@@ -1,5 +1,4 @@
-My Portfolio Website
-=====================
+# My Portfolio Website
 
 # Overview
 
@@ -31,12 +30,17 @@ docker push $DOCKER_REGISTRY/my-portfolio-app:latest
 
 # Check the registry
 curl -u user:pass https://$DOCKER_REGISTRY/v2/_catalog
+
+# Or if using gitea registry
+curl --netrc -X GET https://gitea.yourdomain.com/v2/_catalog
 ```
 
 # CI/CD
+
 Run in Gitea Actions within kubernetes cluster
 
 Current, the project has workflow files for:
+
 - Build and push the container to the registry
 - Deploy the container to the Kubernetes cluster
 
