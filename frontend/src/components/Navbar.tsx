@@ -35,11 +35,13 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
       }
     }
 
-    document.addEventListener('mousedown', handleClickoutside)
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickoutside)
+    }
     return () => {
       document.removeEventListener('mousedown', handleClickoutside)
     }
-  })
+  }, [isMenuOpen])
 
   const menuItem = [
     { title: 'Home', href: '/' },
