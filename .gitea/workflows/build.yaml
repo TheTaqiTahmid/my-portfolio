@@ -66,4 +66,4 @@ jobs:
           push: true
           tags:
             - ${{ secrets.DOCKER_REGISTRY }}/taqi/portfolio/my-portfolio-app:latest
-            - ${{ secrets.DOCKER_REGISTRY }}/taqi/portfolio/my-portfolio-app:1.0.0-${{ gitea.run_number }}
+            - ${{ secrets.DOCKER_REGISTRY }}/taqi/portfolio/my-portfolio-app:1.0.0-$(date +%Y%m%d%H%M%S)
