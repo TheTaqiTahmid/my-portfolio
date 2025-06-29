@@ -64,6 +64,6 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags:
-            - ${{ secrets.DOCKER_REGISTRY }}/taqi/portfolio/my-portfolio-app:latest
-            - ${{ secrets.DOCKER_REGISTRY }}/taqi/portfolio/my-portfolio-app:1.0.0-$(date +%Y%m%d%H%M%S)
+          tags: |
+            ${{ secrets.DOCKER_REGISTRY }}/taqi/portfolio/my-portfolio-app:latest
+            ${{ secrets.DOCKER_REGISTRY }}/taqi/portfolio/my-portfolio-app:1.0.0-${{ steps.timestamp.outputs.timestamp }}
