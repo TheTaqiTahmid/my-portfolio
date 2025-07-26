@@ -34,7 +34,3 @@ steps:
       build_args:
         - COMMIT_SHA=${CI_COMMIT_SHA}
         - COMMIT_AUTHOR_EMAIL=${CI_COMMIT_AUTHOR_EMAIL}
-      username:
-        from_secret: docker-username
-      password:
-        from_secret: docker-password
