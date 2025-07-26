@@ -1,0 +1,40 @@
+when:
+  - event: [push, pull_request, manual]
+    branch: [master, feature/*]
+
+steps:
+  - name: lint-frontend
+    image: node:24
+    commands:
+      - cd frontend
+      - npm install
+      - npm run lint
+
+  - name: trivy-scan
+    image: aquasec/trivy:latest
+    commands:
+      - trivy fs --scanners vuln,config --exit-code 1 --severity HIGH,CRITICAL frontend/
+
+  - name: build-frontend
+    image: node:24
+    commands:
+      - cd frontend
+      - npm run build
+
+  - name: build-and-publish
+    image: woodpeckerci/plugin-kaniko
+    settings:
+      registry: ${docker_registry}
+      repo: ${docker_registry}/taqi/portfolio
+      tags:
+        - latest
+        - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
+      cache: true
+      skip_tls_verify: false # set to true for testing registries ONLY with self-signed certs
+      build_args:
+        - COMMIT_SHA=${CI_COMMIT_SHA}
+        - COMMIT_AUTHOR_EMAIL=${CI_COMMIT_AUTHOR_EMAIL}
+      username:
+        from_secret: docker-username
+      password:
+        from_secret: docker-password
