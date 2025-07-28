@@ -13,7 +13,7 @@ steps:
   - name: trivy-scan
     image: aquasec/trivy:latest
     commands:
-      - trivy fs --scanners vuln,config --exit-code 1 --severity HIGH,CRITICAL frontend/
+      - trivy fs --scanners vuln,config --exit-code 1 --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
 
   - name: build-frontend
     image: node:24
