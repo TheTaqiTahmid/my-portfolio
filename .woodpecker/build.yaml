@@ -24,8 +24,7 @@ steps:
   - name: build-and-publish
     image: woodpeckerci/plugin-kaniko
     settings:
-      DOCKER_REGISTRY:
-        from_secret: docker_registry
+      DOCKER_REGISTRY: gitea.tahmidcloud.com
       registry: ${DOCKER_REGISTRY}
       repo: taqi/portfolio
       tags:
