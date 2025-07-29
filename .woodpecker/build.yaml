@@ -30,8 +30,7 @@ steps:
       repo: ${DOCKER_REGISTRY}/taqi/portfolio
       tags:
         - latest
-        - ${DOCKER_REGISTRY}/taqi/portfolio:1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
-      cache: true
+        - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
       skip_tls_verify: false # set to true for testing registries ONLY with self-signed certs
       build_args:
         - COMMIT_SHA=${CI_COMMIT_SHA}
