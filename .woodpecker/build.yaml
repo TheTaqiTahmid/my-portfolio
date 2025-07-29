@@ -27,7 +27,7 @@ steps:
       DOCKER_REGISTRY:
         from_secret: docker_registry
       registry: ${DOCKER_REGISTRY}
-      repo: ${DOCKER_REGISTRY}/taqi/portfolio
+      repo: taqi/portfolio
       tags:
         - latest
         - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
