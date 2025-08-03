@@ -26,7 +26,7 @@ steps:
     settings:
       DOCKER_REGISTRY: gitea.tahmidcloud.com
       registry: ${DOCKER_REGISTRY}
-      repo: taqi/portfolio
+      repo: ${DOCKER_REGISTRY}/taqi/portfolio
       tags:
         - latest
         - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
