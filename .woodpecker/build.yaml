@@ -3,29 +3,31 @@ when:
     branch: [master, feature/*]
 
 steps:
-  # - name: lint-frontend
-  #   image: node:24
-  #   commands:
-  #     - cd frontend
-  #     - npm install
-  #     - npm run lint
+  - name: lint-frontend
+    image: node:24
+    commands:
+      - cd frontend
+      - npm install
+      - npm run lint
 
-  # - name: trivy-scan
-  #   image: aquasec/trivy:latest
-  #   commands:
-  #     - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
+  - name: trivy-scan
+    image: aquasec/trivy:latest
+    commands:
+      - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
 
-  # - name: build-frontend
-  #   image: node:24
-  #   commands:
-  #     - cd frontend
-  #     - npm run build
+  - name: build-frontend
+    image: node:24
+    commands:
+      - cd frontend
+      - npm run build
 
   - name: build-and-publish
     image: woodpeckerci/plugin-docker-buildx
     settings:
-      registry: gitea.tahmidcloud.com
-      repo: gitea.tahmidcloud.com/taqi/portfolio
+      DOCKER_REGISTRY:
+        from_secret: docker-registry
+      registry: ${DOCKER_REGISTRY}
+      repo: ${DOCKER_REGISTRY}/taqi/portfolio
       tags:
         - latest
         - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
@@ -33,3 +35,7 @@ steps:
       build_args:
         - COMMIT_SHA=${CI_COMMIT_SHA}
         - COMMIT_AUTHOR_EMAIL=${CI_COMMIT_AUTHOR_EMAIL}
+      username:
+        from_secret: docker-username
+      password:
+        from_secret: docker-password
