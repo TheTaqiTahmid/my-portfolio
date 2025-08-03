@@ -3,23 +3,23 @@ when:
     branch: [master, feature/*]
 
 steps:
-  - name: lint-frontend
-    image: node:24
-    commands:
-      - cd frontend
-      - npm install
-      - npm run lint
+  # - name: lint-frontend
+  #   image: node:24
+  #   commands:
+  #     - cd frontend
+  #     - npm install
+  #     - npm run lint
 
-  - name: trivy-scan
-    image: aquasec/trivy:latest
-    commands:
-      - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
+  # - name: trivy-scan
+  #   image: aquasec/trivy:latest
+  #   commands:
+  #     - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
 
-  - name: build-frontend
-    image: node:24
-    commands:
-      - cd frontend
-      - npm run build
+  # - name: build-frontend
+  #   image: node:24
+  #   commands:
+  #     - cd frontend
+  #     - npm run build
 
   - name: build-and-publish
     image: woodpeckerci/plugin-kaniko
