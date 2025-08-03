@@ -24,7 +24,6 @@ steps:
   - name: build-and-publish
     image: woodpeckerci/plugin-kaniko
     settings:
-      DOCKER_REGISTRY: gitea.tahmidcloud.com
       registry: gitea.tahmidcloud.com
       repo: gitea.tahmidcloud.com/taqi/portfolio
       tags:
