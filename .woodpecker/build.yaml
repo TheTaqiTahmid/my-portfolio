@@ -22,7 +22,7 @@ steps:
   #     - npm run build
 
   - name: build-and-publish
-    image: woodpeckerci/plugin-kaniko
+    image: woodpeckerci/plugin-docker-buildx
     settings:
       registry: gitea.tahmidcloud.com
       repo: gitea.tahmidcloud.com/taqi/portfolio
