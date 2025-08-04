@@ -12,11 +12,12 @@ steps:
     image: node:24
     commands:
       - cd frontend
+      - npm install
       - npm run lint
 
   - name: build-and-publish
     image: woodpeckerci/plugin-docker-buildx
-    settings: 
+    settings:
       IMAGE_REGISTRY:
         from_secret: docker-registry
       registry: ${IMAGE_REGISTRY}
