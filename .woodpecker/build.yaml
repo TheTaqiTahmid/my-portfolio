@@ -3,31 +3,24 @@ when:
     branch: [master, feature/*]
 
 steps:
+  - name: trivy-scan
+    image: gitea.tahmidcloud.com/taqi/trivy:latest
+    commands:
+      - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
+
   - name: lint-frontend
     image: node:24
     commands:
       - cd frontend
-      - npm install
       - npm run lint
-
-  - name: trivy-scan
-    image: aquasec/trivy:latest
-    commands:
-      - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
-
-  - name: build-frontend
-    image: node:24
-    commands:
-      - cd frontend
-      - npm run build
 
   - name: build-and-publish
     image: woodpeckerci/plugin-docker-buildx
-    settings:
-      DOCKER_REGISTRY:
+    settings: 
+      IMAGE_REGISTRY:
         from_secret: docker-registry
-      registry: ${DOCKER_REGISTRY}
-      repo: ${DOCKER_REGISTRY}/taqi/portfolio
+      registry: ${IMAGE_REGISTRY}
+      repo: ${IMAGE_REGISTRY}/taqi/portfolio
       tags:
         - latest
         - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
