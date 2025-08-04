@@ -18,10 +18,8 @@ steps:
   - name: build-and-publish
     image: woodpeckerci/plugin-docker-buildx
     settings:
-      IMAGE_REGISTRY:
-        from_secret: docker-registry
-      registry: ${IMAGE_REGISTRY}
-      repo: ${IMAGE_REGISTRY}/taqi/portfolio
+      registry: gitea.tahmidcloud.com
+      repo: gitea.tahmidcloud.com/taqi/portfolio
       tags:
         - latest
         - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
