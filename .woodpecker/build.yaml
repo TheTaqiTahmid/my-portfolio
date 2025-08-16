@@ -4,7 +4,7 @@ when:
 
 steps:
   - name: trivy-scan
-    image: trivy:latest
+    image: aquasec/trivy:latest
     commands:
       - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
 
