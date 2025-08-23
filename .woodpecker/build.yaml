@@ -6,7 +6,6 @@ steps:
   - name: trivy-scan
     image: aquasec/trivy:latest
     commands:
-      - export TRIVY_DB_REPOSITORY=public.ecr.aws/aquasecurity/trivy-db:2
       - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
 
   - name: lint-frontend
@@ -21,7 +20,7 @@ steps:
     settings:
       registry:
         from_secret: docker_registry
-      repo: ${DOCKER_REGISTRY}/portfolio
+      repo: ${DOCKER_REGISTRY}/taqi/portfolio
       tags:
         - latest
         - 1.0.0-${CI_PIPELINE_NUMBER} # Ref: https://woodpecker-ci.org/docs/usage/environment
@@ -33,3 +32,5 @@ steps:
         from_secret: docker-username
       password:
         from_secret: docker-password
+      DOCKER_REGISTRY:
+        from_secret: docker_registry
