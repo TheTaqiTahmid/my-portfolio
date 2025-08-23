@@ -6,6 +6,7 @@ steps:
   - name: trivy-scan
     image: aquasec/trivy:latest
     commands:
+      - export TRIVY_DB_REPOSITORY=public.ecr.aws/aquasecurity/trivy-db:2
       - trivy fs --scanners vuln,config --exit-code 1  --ignorefile .trivyignore --severity HIGH,CRITICAL frontend/
 
   - name: lint-frontend
