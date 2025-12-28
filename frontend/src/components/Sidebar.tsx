@@ -28,15 +28,16 @@ const Link: React.FC<LinkProps> = ({ icon, href, children, label }) => {
   )
 }
 
-const Sidebar = () => {
-  const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2
-      className={`mt-4 mb-4 text-lg font-semibold ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} hidden md:block`}
-    >
-      {children}
-    </h2>
-  )
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <h2
+    className={`mt-4 mb-4 text-lg font-semibold ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} hidden md:block`}
+  >
+    {children}
+  </h2>
+)
 
+
+const Sidebar = () => {
   return (
     <div
       className={`grid grid-cols-4 md:grid-cols-1 p-2 md:p-6 max-w-xs mx-auto ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} rounded-xl shadow-sm`}
