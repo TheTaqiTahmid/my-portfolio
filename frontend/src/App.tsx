@@ -26,7 +26,7 @@ function App() {
           <section className="min-h-screen">
             <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
             <div className="md:flex md:flex-row md:h-full">
-              <div className="mb-4 md:w-1/4 md:max-w-[260px] md:max-h-[900px] border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-sm">
+              <div className="mb-4 md:w-1/4 md:max-w-[260px] md:max-h-[900px] border-2 border-gray-300 dark:border-gray-700 rounded-lg shadow-xs">
                 <Sidebar />
               </div>
               <div className="md:flex-1">

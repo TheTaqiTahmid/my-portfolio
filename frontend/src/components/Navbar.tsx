@@ -98,7 +98,7 @@ const Navbar: React.FC<NavProps> = ({ toggleDarkMode, darkMode }) => {
           </li>
           <li className="p-2 ml-5 cursor-pointer">
             <div ref={menuRef} className="group relative">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-none">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus:outline-hidden">
                 <Menu size={24} />
               </button>
 

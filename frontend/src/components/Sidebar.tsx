@@ -40,7 +40,7 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 const Sidebar = () => {
   return (
     <div
-      className={`grid grid-cols-4 md:grid-cols-1 p-2 md:p-6 max-w-xs mx-auto ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} rounded-xl shadow-sm`}
+      className={`grid grid-cols-4 md:grid-cols-1 p-2 md:p-6 max-w-xs mx-auto ${COLORS.PRIMARY} ${COLORS.DARK_PRIMARY} rounded-xl shadow-xs`}
     >
       <SectionTitle>Contact</SectionTitle>
       {SOCIALLINKS.contact.map((link, index) => (
